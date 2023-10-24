@@ -1,0 +1,233 @@
+/*  rem and em do Not depend on html font-size in media queries
+ Instead, 1rem = 1em = 16px */
+
+/* ******************** */
+
+/* DESKTOP 1200px Desktop */
+
+/* ******************** */
+
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px */
+    font-size: 56.25%;
+  }
+  .heading-description {
+    font-size: 4rem;
+  }
+}
+
+/* ******************** */
+
+/* DESKTOP 1104px Desktop */
+
+/* ******************** */
+
+@media (max-width: 69em) {
+  /* .section-testimonial {
+    padding: 4.8rem;
+  } */
+
+  .hero {
+    padding: 3.2rem;
+  }
+
+  .section-intro {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+  }
+
+  .container {
+    padding: 0 3.6rem;
+  }
+}
+
+/* ************************** */
+/*  BELOW 1040px ( Laptops)*/
+/* ************************** */
+
+@media (max-width: 65em) {
+  html {
+    /* 8px / 16px = 0.5 = 50%*/
+    font-size: 50%;
+  }
+
+  .section-hero {
+    padding: 0;
+  }
+
+  .heading-description {
+    font-size: 3.2rem;
+    line-height: 1;
+  }
+}
+
+/* ************************** */
+/*  BELOW 880px ( Tablets)*/
+/* ************************** */
+
+@media (max-width: 55em) {
+  .hero {
+    padding: 5.2rem;
+  }
+
+  .btn-price:link,
+  .btn-price:visited {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    font-size: 1.8rem;
+  }
+
+  .product-lists {
+    font-size: 1.6rem;
+  }
+
+  .product-heading {
+    font-size: 1.7rem;
+  }
+
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* HIDE NAVIGATION */
+    /* Allows non transitions at all */
+    /* display: none; */
+
+    /* 1) HIDE THE ELEMENT VISIUALLY */
+    opacity: 0;
+
+    /*2)MAKE IT UNACCESSIBLE TO MOUSE AND KEYBORD */
+    pointer-events: none;
+
+    /*3) HIDE IT FROM SCREEN READERS  */
+    visibility: hidden;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    display: block;
+    width: 100%;
+    /* margin-bottom: 4.0rem; */
+    text-align: center;
+  }
+
+  .footer .footer-center i {
+    margin-left: 0;
+  }
+}
+
+/* ************************** */
+/*  BELOW 720px ( Tablet)*/
+/* ************************** */
+
+@media (max-width: 45em) {
+  .main-text {
+    font-size: 2.8rem;
+  }
+
+  .grid-3--cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .single-grid {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .heading-description {
+    font-size: 3.8rem;
+    line-height: 1;
+  }
+
+  .textbox,
+  .hero-img {
+    text-align: center;
+  }
+
+  .grid-3--cols-testimonial {
+    grid-template-columns: 2fr 3fr;
+  }
+  
+  .product-content {
+    padding: 1.8rem 3.2rem 3.2rem 3.2rem;
+    /* padding: 2.2rem 4.8rem 4.8rem 4.8rem; */
+  }
+  
+  .single-grid-i {
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-items: center;
+    width: 50%;
+  }
+}
+
+
+/* ************************** */
+/*  BELOW 544px ( Phones)*/
+/* ************************** */
+
+@media (max-width: 34em) {
+  .grid-3--cols,
+  .grid-2--cols {
+    grid-template-columns: 1fr;
+  }
+  .grid-3--cols-testimonial {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .single-grid-i {
+    width: 100%;
+  }
+  .single-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+}
